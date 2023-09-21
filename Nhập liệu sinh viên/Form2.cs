@@ -57,13 +57,19 @@ namespace Nhập_liệu_sinh_viên
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
+            txtMS.Focus();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult rs = MessageBox.Show("Bạn muốn thoát chương trình ?", "Thoát",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(rs == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void txtDTB_TextChanged(object sender, EventArgs e)
@@ -79,7 +85,7 @@ namespace Nhập_liệu_sinh_viên
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
